@@ -1,4 +1,4 @@
-## @ataastar/rm-api-ts-oa@0.0.1
+## @ataastar/rm-api-ts-oa@0.0.3
 
 ### Building
 
@@ -31,7 +31,7 @@ Navigate to the folder of your consuming project and run one of next commands.
 _published:_
 
 ```
-npm install @ataastar/rm-api-ts-oa@0.0.1 --save
+npm install @ataastar/rm-api-ts-oa@0.0.3 --save
 ```
 
 _without publishing (not recommended):_
