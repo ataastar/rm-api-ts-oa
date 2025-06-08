@@ -19,7 +19,7 @@ import { CustomHttpParameterCodec }                          from '../encoder';
 import { Observable }                                        from 'rxjs';
 
 // @ts-ignore
-import { RequirementTreeNode } from '../model/requirementTreeNode';
+import { Requirement } from '../model/requirement';
 
 // @ts-ignore
 import { BASE_PATH, COLLECTION_FORMATS }                     from '../variables';
@@ -97,9 +97,9 @@ export class RequirementService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public allRequirementTree(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<Array<Array<RequirementTreeNode>>>;
-    public allRequirementTree(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<Array<Array<RequirementTreeNode>>>>;
-    public allRequirementTree(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<Array<Array<RequirementTreeNode>>>>;
+    public allRequirementTree(observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<Array<Requirement>>;
+    public allRequirementTree(observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<Array<Requirement>>>;
+    public allRequirementTree(observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<Array<Requirement>>>;
     public allRequirementTree(observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
 
         let localVarHeaders = this.defaultHeaders;
@@ -134,7 +134,7 @@ export class RequirementService {
         }
 
         let localVarPath = `/requirement`;
-        return this.httpClient.request<Array<Array<RequirementTreeNode>>>('get', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<Array<Requirement>>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -153,9 +153,9 @@ export class RequirementService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public requirementTreeById(requirementId: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<Array<Array<RequirementTreeNode>>>;
-    public requirementTreeById(requirementId: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<Array<Array<RequirementTreeNode>>>>;
-    public requirementTreeById(requirementId: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<Array<Array<RequirementTreeNode>>>>;
+    public requirementTreeById(requirementId: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<Array<Requirement>>;
+    public requirementTreeById(requirementId: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<Array<Requirement>>>;
+    public requirementTreeById(requirementId: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<Array<Requirement>>>;
     public requirementTreeById(requirementId: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
         if (requirementId === null || requirementId === undefined) {
             throw new Error('Required parameter requirementId was null or undefined when calling requirementTreeById.');
@@ -193,7 +193,7 @@ export class RequirementService {
         }
 
         let localVarPath = `/requirement/${this.configuration.encodeParam({name: "requirementId", value: requirementId, in: "path", style: "simple", explode: false, dataType: "number", dataFormat: "int64"})}`;
-        return this.httpClient.request<Array<Array<RequirementTreeNode>>>('get', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<Array<Requirement>>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,
@@ -213,9 +213,9 @@ export class RequirementService {
      * @param observe set whether or not to return the data Observable as the body, response or events. defaults to returning the body.
      * @param reportProgress flag to report request and response progress.
      */
-    public requirementTreeByIdAndLevel(requirementId: number, level: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<Array<Array<RequirementTreeNode>>>;
-    public requirementTreeByIdAndLevel(requirementId: number, level: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<Array<Array<RequirementTreeNode>>>>;
-    public requirementTreeByIdAndLevel(requirementId: number, level: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<Array<Array<RequirementTreeNode>>>>;
+    public requirementTreeByIdAndLevel(requirementId: number, level: number, observe?: 'body', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<Array<Requirement>>;
+    public requirementTreeByIdAndLevel(requirementId: number, level: number, observe?: 'response', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpResponse<Array<Requirement>>>;
+    public requirementTreeByIdAndLevel(requirementId: number, level: number, observe?: 'events', reportProgress?: boolean, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<HttpEvent<Array<Requirement>>>;
     public requirementTreeByIdAndLevel(requirementId: number, level: number, observe: any = 'body', reportProgress: boolean = false, options?: {httpHeaderAccept?: 'application/json', context?: HttpContext}): Observable<any> {
         if (requirementId === null || requirementId === undefined) {
             throw new Error('Required parameter requirementId was null or undefined when calling requirementTreeByIdAndLevel.');
@@ -256,7 +256,7 @@ export class RequirementService {
         }
 
         let localVarPath = `/requirement/${this.configuration.encodeParam({name: "requirementId", value: requirementId, in: "path", style: "simple", explode: false, dataType: "number", dataFormat: "int64"})}/${this.configuration.encodeParam({name: "level", value: level, in: "path", style: "simple", explode: false, dataType: "number", dataFormat: "int64"})}`;
-        return this.httpClient.request<Array<Array<RequirementTreeNode>>>('get', `${this.configuration.basePath}${localVarPath}`,
+        return this.httpClient.request<Array<Requirement>>('get', `${this.configuration.basePath}${localVarPath}`,
             {
                 context: localVarHttpContext,
                 responseType: <any>responseType_,

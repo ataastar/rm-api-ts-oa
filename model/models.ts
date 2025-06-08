@@ -1,2 +1,2 @@
 export * from './branchTree';
-export * from './requirementTreeNode';
+export * from './requirement';
