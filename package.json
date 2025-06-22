@@ -1,6 +1,6 @@
 {
   "name": "@ataastar/rm-api-ts-oa",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "OpenAPI client for @ataastar/rm-api-ts-oa",
   "author": "OpenAPI-Generator Contributors",
   "repository": {

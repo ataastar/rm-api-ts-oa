@@ -9,8 +9,10 @@ encoder.ts
 git_push.sh
 index.ts
 model/branchTree.ts
+model/modelError.ts
 model/models.ts
 model/requirement.ts
+model/requirementProperty.ts
 ng-package.json
 package.json
 param.ts
